@@ -2,13 +2,13 @@
   <div>
     <NavBar />
     <FooterComponent />
+    <Home />
     </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
 import FooterComponent from './components/FooterComponent.vue';
-
 
 export default {
   name: 'App',
