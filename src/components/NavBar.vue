@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <router-link @click="scrollToTop()" to="/" class="logo"><img src="../assets/images/burrito/lastone.jpg" alt="" />
+        <router-link @click="scrollToTop()" to="/" class="logo"><img src="" alt="" />
         </router-link>
 
         <nav class="navbar">

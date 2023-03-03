@@ -1,16 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Hello World"/>
+  <div>
+    <NavBar />
+    <FooterComponent />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/NavBar.vue';
+import FooterComponent from './components/FooterComponent.vue';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-}
+    NavBar,
+    FooterComponent
+  }
 }
 </script>
 
