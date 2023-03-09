@@ -12,7 +12,7 @@
                     <p>At our company, we understand the importance of having reliable tires on the road. 
                         That's why we offer a wide range of high-quality tires from reputable brands, 
                         ensuring that our customers have access to the products they need. 
-                        Our prices are highly competitive, so customers can get great value for their money. 
+                        Our prices are highly competitive , so customers can get a great bank for their buck. 
                     </p>
                     <p>
                         Our team is made up of knowledgeable and experienced professionals who are passionate about helping our customers find the right tires for their needs. 
