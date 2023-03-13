@@ -5,42 +5,42 @@
                 <span>Welcome Tire Fanatics</span>
                 <h3>Quality Tires from Germany ©</h3>
                 <p>We guarantee quality tires and accessories for your precious car. We hope you fanatics will enjoy the experience we offer as much as we did creating it for you.</p>
-                <router-link @click="scrollToTop()" to="" class="btn">order now</router-link>
+                <router-link @click="scrollToTop()" to="/menu" class="btn">order now</router-link>
             </div>
             <div class="image">
-                <img src="" alt="" class="home-img">
+                <img src="https://blogmedia.dealerfire.com/wp-content/uploads/sites/375/2015/09/Tires-A.jpg" alt="" class="home-img">
             </div>
         </div>
 
 
         <div class="home-category">
-            <router-link @click="scrollToTop()" to="" class="box">
-                <img src="" alt="">
+            <router-link @click="scrollToTop()" to="/menu" class="box">
+                <img src="https://freepngimg.com/thumb/car/3-2-car-free-download-png-thumb.png" alt="">
                 <h3>Car</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="" class="box">
-                <img src="" alt="">
+            <router-link @click="scrollToTop()" to="/menu" class="box">
+                <img src="https://www.pngplay.com/wp-content/uploads/13/SUV-Transparent-PNG.png" alt="">
                 <h3>SUV</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="" class="box">
-                <img src="" alt="">
+            <router-link @click="scrollToTop()" to="/menu" class="box">
+                <img src="https://www.pngarts.com/files/3/Chevy-Pickup-Truck-Transparent-Background-PNG.png" alt="">
                 <h3>Truck</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="" class="box">
-                <img src="" alt="">
+            <router-link @click="scrollToTop()" to="/menu" class="box">
+                <img src="https://www.lifepng.com/wp-content/uploads/2020/11/Swift-Motorhome-png-hd.png" alt="">
                 <h3>Motor-Home</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="" class="box">
-                <img src="" alt="">
+            <router-link @click="scrollToTop()" to="/menu" class="box">
+                <img src="https://pngimg.com/uploads/tractor/tractor_PNG16109.png" alt="">
                 <h3>Tractor</h3>
             </router-link>
 
-            <router-link @click="scrollToTop()" to="" class="box">
-                <img src="" alt="">
+            <router-link @click="scrollToTop()" to="/menu" class="box">
+                <img src="https://www.freeiconspng.com/thumbs/motorcycle-png/motorcycle-png-19.png" alt="">
                 <h3>Motorcycle</h3>
             </router-link>
         </div>
@@ -48,36 +48,65 @@
         <div class="home-banner">
             <div class="grid-banner row">
                 <div class="grid col-md-4">
-                    <img src="" alt="">
+                    <img src="https://www.farm-equipment.com/ext/resources/images/webarticles/2014/Aug/9RT%20Tractor%20-%20Field.jpg" alt="">
                     <div class="content">
                         <span>special offer</span>
                         <h3>upto 50% off</h3>
-                        <router-link @click="scrollToTop()" to="" class="btn">order now</router-link>
+                        <router-link @click="scrollToTop()" to="/menu" class="btn">order now</router-link>
                     </div>
                 </div>
 
                 <div class="grid col-md-4">
-                    <img src="" alt="">
+                    <img src="https://www.racshop.co.uk/advice/wp-content/uploads/2022/10/istockphoto-1394550535-612x612-1.jpg" alt="">
                     <div class="content center">
                         <span>special offer</span>
                         <h3>upto 25% extra</h3>
-                        <router-link @click="scrollToTop()" to="" class="btn">order now</router-link>
+                        <router-link @click="scrollToTop()" to="/menu" class="btn">order now</router-link>
                     </div>
                 </div>
 
                 <div class="grid col-md-4">
-                    <img src="" alt="">
+                    <img src="https://img.freepik.com/premium-photo/handsome-professional-car-mechanic-changes-wheel-car-carries-out-tire-change-specialized-auto-repair-center_283617-4518.jpg" alt="">
                     <div class="content">
                         <span>limited offer</span>
                         <h3>100% cashback</h3>
-                        <router-link @click="scrollToTop()" to="" class="btn">order now</router-link>
+                        <router-link @click="scrollToTop()" to="/menu" class="btn">order now</router-link>
                     </div>
                 </div>
 
             </div>
 
         </div>
+
+        <div class="home-about">
+            <div class="image">
+                <img src="https://s3.envato.com/files/323075137/66969.jpg" alt="">
+            </div>
+            <div class="content">
+                <span>why choose us?</span>
+                <h3 class="title">What makes us better than the competition?</h3>
+                <p>At our company, we believe in providing only the best tire products to our customers. Our prices are highly competitive, and our team is knowledgeable and experienced. We prioritize customer satisfaction, making it easy and convenient to purchase and receive our products. And, with our clear warranty and return policy, customers can feel confident in their purchase decisions.
+</p>
+                <router-link @click="scrollToTop()" to="/about" class="btn">read more</router-link>
+
+                <div class="icons-container">
+                    <div class="icons">
+                        <img src="../assets/images/serv-1.png" alt="">
+                        <h3>fast delivery</h3>
+                    </div>
+                 
+                    <div class="icons">
+                        <img src="../assets/images/serv-3.png" alt="">
+                        <h3>best quality</h3>
+                    </div>
+                    <div class="icons">
+                        <img src="../assets/images/serv-4.png" alt="">
+                        <h3>24/7 support</h3>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 </template>
 
 <script>
@@ -186,7 +215,7 @@ export default {
 
 /* home banner */
 .home-banner .row-banner {
-    background: url() no-repeat;
+    background: url(../assets/images/row-banner.png) no-repeat;
     height: 45rem;
     background-size: cover;
     background-position: center;
