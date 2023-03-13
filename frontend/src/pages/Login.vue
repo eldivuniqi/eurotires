@@ -4,14 +4,20 @@
             <form id="loginForm" @submit="handleSubmit" novalidate autocomplete="off">
                 <h3>LOGIN</h3>
 
+                <div v-if="errors.length" class="error-box">
+                    <ul>
+                        <li v-for="error in errors" :key="error">{{ error }}</li>
+                    </ul>
+                </div>
 
                 <div class="form-group">
-                    <input type="email" id="uEmail" name="uEmail" class="form-control" placeholder="enter your email" />
+                    <input type="email" id="uEmail" name="uEmail" class="form-control" placeholder="enter your email"
+                        v-model="loginObj.email" />
                 </div>
 
                 <div class="form-group">
                     <input type="password" id="uPass" name="uPass" class="form-control"
-                        placeholder="enter your password"  />
+                        placeholder="enter your password" v-model="loginObj.pass" />
                 </div>
 
                 <div class="form-group">
@@ -25,16 +31,75 @@
     </div>
 </template>
 
+
 <script>
+import axios from "axios";
+import { mapMutations } from "vuex";
 export default {
-    name: "Home",
+    name: 'Login',
+
+    data() {
+        return {
+            loginObj: { email: "", pass: "" },
+            matchUser: undefined,
+            errors: [],
+        }
+    },
 
     methods: {
+        ...mapMutations(["setUser"]),
+
         scrollToTop() {
             window.scrollTo(0, 0);
+        },
+
+        async getMatchUser(email) {
+            let data = await axios.get('/users/' + email);
+            this.matchUser = data.data;
+        },
+
+        async handleSubmit(e) {
+            this.errors = [];
+
+            if (!this.loginObj.email) {
+                this.errors.push("Entering a email is required");
+            }
+            else {
+                if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(this.loginObj.email)) {
+                    this.errors.push('Email must be valid');
+                }
+            }
+
+
+            if (!this.loginObj.pass) {
+                this.errors.push('Password is required');
+            }
+
+            if (!this.errors.length == 0) {
+                e.preventDefault();
+            }
+            else {
+                e.preventDefault();
+                await this.getMatchUser(this.loginObj.email);
+                if (!this.matchUser) {
+                    this.errors.push("Incorrect email or password!")
+                }
+                else {
+                    if (this.matchUser.user_password === this.loginObj.pass) {
+                        this.matchUser.user_password = "";
+                        this.setUser(this.matchUser);
+                        this.$router.push("/");
+                    }
+                    else {
+                        this.errors.push("Incorrect email or password!")
+                    }
+                }
+            }
         }
+
     }
-};
+
+}
 </script>
 
 <style scoped>
