@@ -1,31 +1,48 @@
 <template>
-  <div>
-    <NavBar />
-    <FooterComponent />
-    <Home />
+    <div id="app">
+        <div v-if="admin">
+            <router-view></router-view>
+        </div>
+        <div v-else>
+            <NavBar />
+
+            <div class="auth-wrapper">
+                <div class="auth-inner">
+                    <router-view></router-view>
+                </div>
+            </div>
+            <FooterComponent />
+        </div>
     </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
 import FooterComponent from './components/FooterComponent.vue';
-
+import { mapActions } from 'vuex';
+import { mapState } from 'vuex';
 export default {
-  name: 'App',
-  components: {
-    NavBar,
-    FooterComponent
-  }
+    name: 'App',
+    components: {
+        NavBar,
+        FooterComponent
+    },
+
+    created() {
+        this.gettiresData()
+    },
+
+    computed: {
+        ...mapState(["admin"])
+    },
+
+    methods: {
+        ...mapActions(["gettiresData"])
+    }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./assets/css/global_style.css";
 </style>
+
